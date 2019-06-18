@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Delphi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Program" Height="600" Width="1000">
+    <StackPanel>
+        <Menu Height="18" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Load" Click="FileLoadMenu_Click" ></MenuItem>
+                <MenuItem Header="Unload" Click="FileUnLoadMenu_Click" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" Click="ProgramExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Filters">
+                <MenuItem Header="Year" Click="YearLoad_Click" IsCheckable="True" IsChecked="False"></MenuItem>
+                <MenuItem Header="Country" Click="CountryLoad_Click" IsCheckable="True" IsChecked="False"></MenuItem>
+                <MenuItem Header="Genre" Click="GenreLoad_Click" IsCheckable="True" IsChecked="False"></MenuItem>
+                <MenuItem Header="Actors" Click="ActorsLoad_Click" IsCheckable="True" IsChecked="False"></MenuItem>
+                <MenuItem Header="Director" Click="DirectorLoad_Click" IsCheckable="True" IsChecked="False"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Info" Click="InfoRead_Click">
+            </MenuItem>
+            <TextBlock>Status: </TextBlock>
+            <TextBlock Name="fileParticular"></TextBlock>
+        </Menu>
+       
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700" MinWidth="700" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+            
+            
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="0" Grid.Column="0" MinWidth="500" Height="600">
+                <StackPanel Name="DataColumn" MinWidth="500">
+                        
+                </StackPanel>
+            </ScrollViewer>
+            
+            <StackPanel Grid.Row="0"  Grid.Column="1" Name="FiltersColumn" MaxWidth="300">
+
+            </StackPanel>
+        </Grid>
         
-    </Grid>
+    </StackPanel>
 </Window>
